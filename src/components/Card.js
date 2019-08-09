@@ -7,6 +7,12 @@ export default function Card({ data }) {
       const strArrCopy = strArr.map(str=>str.charAt(0).toUpperCase() + str.slice(1))
       return strArrCopy.join(' ')
    }
+
+   Number.prototype.format = function(n, x) {
+      var re = '\\d(?=(\\d{' + (x || 3) + '})+' + (n > 0 ? '\\.' : '$') + ')';
+      return this.toFixed(Math.max(0, ~~n)).replace(new RegExp(re, 'g'), '$&,');
+  };
+
    return (
       <div className='card'>
          {data && data.showBridge ? 
@@ -27,7 +33,7 @@ export default function Card({ data }) {
             <p className='subheading'>{upperCase(data.Subheading)}</p>
             </div>
             <div className='price'>
-            <h5 >{data.Price}</h5>
+            <h5 >${data.Price.format()}</h5>
             </div>
          </div>
       </div>
