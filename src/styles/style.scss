@@ -1,14 +1,15 @@
 $background : #7ca7d9;
 $width: 200px;
-$height: 400px;
+$height: 300px;
 $card-margin: 10px;
 $breakpoint-mobile: 360px;
 $breakpoint-tablet: 768px;
 
 @mixin flexCenter {
    display: flex;
-   justify-content: center;
+   justify-content: flex-start;
    align-items: center;
+   overflow: hidden;
 }
 
 @mixin flexWrap {
@@ -35,7 +36,12 @@ body{
 
 .card{
 @include flexCenter;
-  width: $width;
+  max-width: $width;
+  min-width: $width;
   height: $height;
   margin: $card-margin;
+  box-shadow: 5px 5px 5px rgba(0,0,0,0.3);
+  img{
+     
+  }
 }
