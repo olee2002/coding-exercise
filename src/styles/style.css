@@ -30,7 +30,6 @@ body {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    overflow: hidden;
   }
 }
 
@@ -47,7 +46,7 @@ body {
   overflow: hidden;
   max-width: 200px;
   min-width: 200px;
-  height: 300px;
+  min-height: 300px;
   margin: 10px;
   -webkit-box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
           box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
@@ -55,7 +54,7 @@ body {
 
 .card .place-holder {
   width: 100%;
-  height: 50%;
+  height: 150px;
   background: url("http://res.cloudinary.com/bguggie/image/upload/v1425514882/darktiles_bg_gike55.jpg");
   background-repeat: no-repeat;
   background-size: 200px;
@@ -68,11 +67,41 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  overflow: hidden;
 }
 
 .card .place-holder img {
   width: 70%;
   height: 70%;
+}
+
+.card .card-content {
+  width: 100%;
+  min-height: 150px;
+  padding: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  overflow: hidden;
+}
+
+.card .card-content .sub-content {
+  margin: 10px;
+  width: 95%;
+  border-bottom: 1px solid lightgray;
+}
+
+.card .card-content .price {
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  color: green;
 }
 /*# sourceMappingURL=style.css.map */

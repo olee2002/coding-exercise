@@ -2,7 +2,6 @@ $background : #7ca7d9;
 $width: 200px;
 $height: 300px;
 $card-margin: 10px;
-$breakpoint-mobile: 360px;
 $breakpoint-tablet: 768px;
 
 @mixin flexStart {
@@ -12,11 +11,18 @@ $breakpoint-tablet: 768px;
    overflow: hidden;
 }
 
+@mixin flexColumn {
+   display: flex;
+   flex-direction: column;
+   // justify-content: flex-start;
+   align-items: center;
+   overflow: hidden;
+}
+
 @mixin flexCenter {
    display: flex;
    justify-content: center;
    align-items: center;
-   overflow: hidden;
 }
 
 @mixin flexWrap {
@@ -45,12 +51,12 @@ body{
 @include flexStart;
   max-width: $width;
   min-width: $width;
-  height: $height;
+  min-height: $height;
   margin: $card-margin;
   box-shadow: 5px 5px 5px rgba(0,0,0,0.3);
   .place-holder{
    width: 100%;
-   height: 50%;
+   height: $height/2;
    background : url('http://res.cloudinary.com/bguggie/image/upload/v1425514882/darktiles_bg_gike55.jpg');
    background-repeat: no-repeat;
    background-size: $width;
@@ -58,6 +64,23 @@ body{
    img{
       width: 70%;
       height: 70%;
+   }
+  }
+  .card-content{
+   width: 100%;
+   min-height: $height/2;
+   padding: 10px;
+   @include flexColumn;
+   .sub-content{
+      margin: 10px;
+      width: 95%;
+      border-bottom: 1px solid lightgray;
+   }
+   .price{
+      align-self: flex-end;
+      margin-right: 10px;
+      margin-bottom: 10px;
+      color: green;
    }
   }
 }
