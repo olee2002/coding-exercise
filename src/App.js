@@ -50,20 +50,20 @@ class App extends Component{
   render(){
    const { data, page, limit, paginate } = this.state
    return (
-      < div className='main'>
-    <Header handleSort={this.handleSort}/>
-     <div className="container">
-       {data && data.length>0 && data.map((info, i)=><Card key={i} data = {info}/>)}
-     </div>
-     <Pagination 
-     count={importedData.length}
-     page={page}
-     onChangePage={this.getPaginationPage}
-     paginate={paginate}
-     handlePaginate={this.handlePaginate}
-     limit={limit}
-     />
-     </div>
+      <>
+         <Header handleSort={this.handleSort}/>
+         <div className="container">
+            {data && data.length>0 && data.map((info, i)=><Card key={i} data = {info}/>)}
+         </div>
+         <Pagination 
+         count={importedData.length}
+         page={page}
+         onChangePage={this.getPaginationPage}
+         paginate={paginate}
+         handlePaginate={this.handlePaginate}
+         limit={limit}
+         />
+     </>
    );
   }
 }
