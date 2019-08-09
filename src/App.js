@@ -1,10 +1,8 @@
 import React from 'react';
-import logo from './logo.svg';
 
 import Card from './components/Card'
 
 import data from './data/UIE-InterviewProject.json'
-
 import './styles/style.css';
 
 function App() {
