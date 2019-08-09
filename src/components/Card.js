@@ -23,9 +23,9 @@ export default function Card({ data }) {
          :  
          <div className='place-holder'>
             <img 
-         src='http://res.cloudinary.com/bguggie/image/upload/v1425514736/place_holder_zuvywg.png'
-         alt='placeholder'
-         /> 
+            src='http://res.cloudinary.com/bguggie/image/upload/v1425514736/place_holder_zuvywg.png'
+            alt='placeholder'
+            /> 
          </div>} 
          <div className='card-content'>
             <div className='sub-content'>
