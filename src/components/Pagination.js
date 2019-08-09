@@ -34,12 +34,12 @@ export default class Pagination extends Component {
 
    render() {
       const { limit, currentPage } = this.state
-      const { count, onChangePage, page } = this.props
+      const { count, onChangePage, page, paginate, handlePaginate } = this.props
       const maxPage = Math.ceil(count / limit)
       const currentlyAtMax = maxPage === page
       return (
          <div className='pagination'>
-            {this.showBoxes(count, limit).map((item, i) => (
+            {paginate ? this.showBoxes(count, limit).map((item, i) => (
                <div
                   key={i}
                   className='flex ml5 cell'
@@ -50,7 +50,7 @@ export default class Pagination extends Component {
                   style={i === currentPage ? boxStyle : boxStyleOutline}>
                   {item}
                </div>
-            ))}
+            )) : <button className='btn btn-primary' onClick={handlePaginate}>Paginate</button>}
          </div>
       )
    }

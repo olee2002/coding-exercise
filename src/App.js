@@ -10,13 +10,13 @@ import './styles/style.css';
 class App extends Component{
    state = {
       data : importedData,
+      paginate: false,
       page: 1,
       limit: 5,
    }
-   componentDidMount(){
-      const { page, limit} = this.state
-      this.setState({data: importedData.slice(0,limit)})
-   }
+   // componentDidMount(){
+
+   // }
 
 
    componentDidUpdate(prevProps, prevState) {
@@ -37,15 +37,21 @@ class App extends Component{
  
    handleSort= key => {
       const { data } = this.state
-         const sortedData = data.sort((a, b)=>{
+         const sortedData = importedData.sort((a, b)=>{
             if(a[key] < b[key]) { return -1; }
             if(a[key] > b[key]) { return 1; }
             return 0;
         })
-       this.setState({data: sortedData})
+       this.setState({data: sortedData, paginate:false})
    }
+
+   handlePaginate=()=>{
+      const { page, limit} = this.state
+      this.setState({data: importedData.slice(0,limit), paginate: !this.state.paginate})
+   }
+
   render(){
-   const { data, page, limit } = this.state
+   const { data, page, limit, paginate } = this.state
    return (
       < div className='main'>
     <Header handleSort={this.handleSort}/>
@@ -56,6 +62,8 @@ class App extends Component{
      count={importedData.length}
      page={page}
      onChangePage={this.getPaginationPage}
+     paginate={paginate}
+     handlePaginate={this.handlePaginate}
      limit={limit}
      />
      </div>
