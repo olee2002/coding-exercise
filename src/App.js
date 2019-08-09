@@ -8,6 +8,7 @@ import importedData from './data/UIE-InterviewProject.json'
 import './styles/style.css';
 
 class App extends Component{
+  
    state = {
       data : importedData,
       paginate: false,

@@ -29,11 +29,11 @@ export default function Card({ data }) {
          </div>} 
          <div className='card-content'>
             <div className='sub-content'>
-            <h5 className='heading'>{upperCase(data.Heading)}</h5>
-            <p className='subheading'>{upperCase(data.Subheading)}</p>
+               <h5 className='heading'>{upperCase(data.Heading)}</h5>
+               <p className='subheading'>{upperCase(data.Subheading)}</p>
             </div>
             <div className='price'>
-            <h5 >${data.Price.format()}</h5>
+               <h5 >${data.Price.format()}</h5>
             </div>
          </div>
       </div>
