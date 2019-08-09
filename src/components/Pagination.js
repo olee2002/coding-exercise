@@ -39,6 +39,11 @@ export default class Pagination extends Component {
       const currentlyAtMax = maxPage === page
       return (
          <div className='pagination'>
+            <div className='git'>
+               <a href='https://github.com/olee2002/coding-exercise' title="GitHub" target="_blank">
+                  <img src='images/github.png' className='icon' alt="" />
+               </a>
+            </div>
             {paginate ? this.showBoxes(count, limit).map((item, i) => (
                <div
                   key={i}

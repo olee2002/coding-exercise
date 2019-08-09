@@ -17,3 +17,8 @@ $pagination-height: 10vh;
    @include flexCenter;
    bottom: 0;
 }
+
+.git{
+   @include flexCenter;
+   margin-right: 50px;
+}
