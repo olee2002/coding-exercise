@@ -1,7 +1,7 @@
-
 import React, { Component } from 'react'
 
 export default class Pagination extends Component {
+
    state = {
       total: 12,
       selected: false,
@@ -40,9 +40,8 @@ export default class Pagination extends Component {
 
    render() {
       const { limit, currentPage } = this.state
-      const { count, onChangePage, page, paginate, handlePaginate } = this.props
-      const maxPage = Math.ceil(count / limit)
-      const currentlyAtMax = maxPage === page
+      const { count, onChangePage, paginate, handlePaginate } = this.props
+
       return (
          <div className='pagination'>
             <div className='git'>
@@ -53,7 +52,6 @@ export default class Pagination extends Component {
             {paginate ? this.showBoxes(count, limit).map((item, i) => (
                <div
                   key={i}
-                  className='flex ml5 cell'
                   onClick={() => {
                      onChangePage(item)
                      this.setState({ currentPage: i })
