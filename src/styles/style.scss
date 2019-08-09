@@ -2,6 +2,8 @@ $background : #7ca7d9;
 $width: 200px;
 $height: 400px;
 $card-margin: 10px;
+$breakpoint-mobile: 360px;
+$breakpoint-tablet: 768px;
 
 @mixin flexCenter {
    display: flex;
@@ -17,12 +19,18 @@ $card-margin: 10px;
    align-items: flex-start;
    flex-wrap: wrap;
 }
+
+
 body{
    background:$background;
 }
 
 .container{
    @include flexWrap;
+   padding-top: 40px;
+   @media (max-width: $breakpoint-tablet) {
+         @include flexCenter;
+   }
 }
 
 .card{
