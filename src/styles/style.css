@@ -2,9 +2,14 @@ body {
   background: #7ca7d9;
 }
 
-* {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+.header {
+  background: #ffffff;
+  height: 15vh;
+  width: 100vw;
+  position: fixed;
+  -webkit-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+          box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+  z-index: 1;
 }
 
 .container {
@@ -21,7 +26,7 @@ body {
           align-items: stretch;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  padding-top: 40px;
+  padding-top: 20vh;
 }
 
 @media (max-width: 768px) {
