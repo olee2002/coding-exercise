@@ -31,10 +31,8 @@ class App extends Component{
    }
 
    paginatedData = () => {
-      const { data, limit, page } = this.state
-      
-      
-      // this.setState({ paginatedData })
+      const { limit, page } = this.state
+      this.setState({data: importedData.slice((page-1)*limit,limit*page)})
    }
  
    handleSort= key => {
