@@ -1,7 +1,10 @@
 import React from 'react';
 import logo from './logo.svg';
-import './styles/style.css';
 
+import data from './data/UIE-InterviewProject.json'
+
+import './styles/style.css';
+console.log('data', data)
 function App() {
   return (
     <div className="App">
