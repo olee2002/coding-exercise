@@ -1,6 +1,6 @@
-//header
-$header-height: 15vh;
-//container
+
+@import './header.scss';
+
 $background : #7ca7d9;
 $width: 200px;
 $height: 300px;
@@ -42,16 +42,6 @@ body{
    background:$background;
 }
 
-.header{
-   background: #ffffff;
-   height: $header-height;
-   width: 100vw;
-   position: fixed;
-   box-shadow: 1px 1px 2px rgba(0,0,0,0.3);
-   z-index: 1;
-   text-align: center;
-   @include flexCenter;
-}
 
 .container{
    @include flexWrap;
@@ -67,12 +57,12 @@ body{
   min-width: $width;
 //   min-height: $height;
   margin: $card-margin;
-  box-shadow: 5px 5px 5px rgba(0,0,0,0.3);
+  box-shadow: 5px 5px 5px rgba(0;0;0;0.3);
 
   .place-holder{
    width: 100%;
    height: $height/2;
-   background : url('http://res.cloudinary.com/bguggie/image/upload/v1425514882/darktiles_bg_gike55.jpg');
+   background : url(http://res.cloudinary.com/bguggie/image/upload/v1425514882/darktiles_bg_gike55.jpg);
    background-repeat: no-repeat;
    background-size: $width;
    @include flexCenter;
@@ -101,4 +91,3 @@ body{
    }
   }
 }
-

@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 
 import Card from './components/Card'
 import Header from './components/Header'
+import Pagination from './components/Pagination'
 
 import importedData from './data/UIE-InterviewProject.json'
 import './styles/style.css';
@@ -12,6 +13,11 @@ class App extends Component{
    }
    componentDidMount(){
       this.setState({data: importedData})
+   }
+
+
+   componentDidUpdate(){
+
    }
  
    handleSort= key => {
@@ -31,6 +37,7 @@ class App extends Component{
      <div className="container">
        {data && data.length>0 && data.map((info, i)=><Card key={i} data = {info}/>)}
      </div>
+     <Pagination/>
      </>
    );
   }
