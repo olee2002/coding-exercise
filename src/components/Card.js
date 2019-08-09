@@ -1,6 +1,7 @@
 import React from 'react'
 
 export default function Card({ data }) {
+
    const upperCase = string=>{
       const strArr = string.split(' ')
       const strArrCopy = strArr.map(str=>str.charAt(0).toUpperCase() + str.slice(1))
@@ -25,7 +26,9 @@ export default function Card({ data }) {
             <h5 className='heading'>{upperCase(data.Heading)}</h5>
             <p className='subheading'>{upperCase(data.Subheading)}</p>
             </div>
-            <h5 className='price'>{data.Price}</h5>
+            <div className='price'>
+            <h5 >{data.Price}</h5>
+            </div>
          </div>
       </div>
    )

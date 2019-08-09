@@ -14,9 +14,8 @@ $breakpoint-tablet: 768px;
 @mixin flexColumn {
    display: flex;
    flex-direction: column;
-   // justify-content: flex-start;
-   align-items: center;
-   overflow: hidden;
+   justify-content: space-between;
+   align-items: stretch;
 }
 
 @mixin flexCenter {
@@ -30,7 +29,7 @@ $breakpoint-tablet: 768px;
    height: 100vh;
    display: flex;
    justify-content: flex-start;
-   align-items: flex-start;
+   align-items: stretch;
    flex-wrap: wrap;
 }
 
@@ -38,6 +37,10 @@ $breakpoint-tablet: 768px;
 body{
    background:$background;
 }
+
+* {
+   box-sizing: border-box;
+ }
 
 .container{
    @include flexWrap;
@@ -51,9 +54,10 @@ body{
 @include flexStart;
   max-width: $width;
   min-width: $width;
-  min-height: $height;
+//   min-height: $height;
   margin: $card-margin;
   box-shadow: 5px 5px 5px rgba(0,0,0,0.3);
+
   .place-holder{
    width: 100%;
    height: $height/2;
@@ -68,19 +72,23 @@ body{
   }
   .card-content{
    width: 100%;
-   min-height: $height/2;
+   height: 100%;
    padding: 10px;
+   flex:1;
    @include flexColumn;
    .sub-content{
       margin: 10px;
-      width: 95%;
-      border-bottom: 1px solid lightgray;
+      
    }
    .price{
+      border-top: 1px solid lightgray;
+      width: 95%;
       align-self: flex-end;
       margin-right: 10px;
       margin-bottom: 10px;
       color: green;
+      text-align: end;
+      padding: 10px;
    }
   }
 }

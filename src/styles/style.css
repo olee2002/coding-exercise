@@ -2,6 +2,11 @@ body {
   background: #7ca7d9;
 }
 
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
 .container {
   width: 100vw;
   height: 100vh;
@@ -11,9 +16,9 @@ body {
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: flex-start;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   padding-top: 40px;
@@ -46,7 +51,6 @@ body {
   overflow: hidden;
   max-width: 200px;
   min-width: 200px;
-  min-height: 300px;
   margin: 10px;
   -webkit-box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
           box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
@@ -76,8 +80,11 @@ body {
 
 .card .card-content {
   width: 100%;
-  min-height: 150px;
+  height: 100%;
   padding: 10px;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -85,23 +92,27 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  overflow: hidden;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
 }
 
 .card .card-content .sub-content {
   margin: 10px;
-  width: 95%;
-  border-bottom: 1px solid lightgray;
 }
 
 .card .card-content .price {
+  border-top: 1px solid lightgray;
+  width: 95%;
   -ms-flex-item-align: end;
       align-self: flex-end;
   margin-right: 10px;
   margin-bottom: 10px;
   color: green;
+  text-align: end;
+  padding: 10px;
 }
 /*# sourceMappingURL=style.css.map */
