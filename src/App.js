@@ -1,20 +1,39 @@
-import React from 'react';
+import React, {Component} from 'react';
 
 import Card from './components/Card'
 import Header from './components/Header'
 
-import data from './data/UIE-InterviewProject.json'
+import importedData from './data/UIE-InterviewProject.json'
 import './styles/style.css';
 
-function App() {
-  return (
-     <>
-   <Header/>
-    <div className="container">
-      {data.map((info, i)=><Card key={i} data = {info}/>)}
-    </div>
-    </>
-  );
+class App extends Component{
+   state = {
+      data : importedData
+   }
+   componentDidMount(){
+      this.setState({data: importedData})
+   }
+ 
+   handleSort= key => {
+      const { data } = this.state
+         const sortedData = data.sort((a, b)=>{
+            if(a[key] < b[key]) { return -1; }
+            if(a[key] > b[key]) { return 1; }
+            return 0;
+        })
+       this.setState({data: sortedData})
+   }
+  render(){
+   const { data } = this.state
+   return (
+      <>
+    <Header handleSort={this.handleSort}/>
+     <div className="container">
+       {data && data.length>0 && data.map((info, i)=><Card key={i} data = {info}/>)}
+     </div>
+     </>
+   );
+  }
 }
 
 export default App;
