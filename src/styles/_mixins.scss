@@ -1,0 +1,37 @@
+//variables
+$background : #7ca7d9;
+$width: 200px;
+$height: 300px;
+$card-margin: 10px;
+$breakpoint-mobile: 360px;
+$header-height: 15vh;
+$pagination-height: 10vh;
+
+//mixins
+@mixin flexStart {
+   display: flex;
+   justify-content: flex-start;
+   align-items: center;
+   overflow: hidden;
+}
+
+@mixin flexColumn {
+   display: flex;
+   flex-direction: column;
+   justify-content: flex-start;
+   align-items: space-between;
+}
+
+@mixin flexCenter {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+@mixin flexWrap {
+   width: 100vw;
+   display: flex;
+   justify-content: flex-start;
+   align-items: stretch;
+   flex-wrap: wrap;
+}

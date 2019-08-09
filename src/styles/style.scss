@@ -1,49 +1,12 @@
 
 @import './header.scss';
 @import './pagination.scss';
-
-$background : #7ca7d9;
-$width: 200px;
-$height: 300px;
-$card-margin: 10px;
-$breakpoint-mobile: 360px;
-
-//mixins
-@mixin flexStart {
-   display: flex;
-   justify-content: flex-start;
-   align-items: center;
-   overflow: hidden;
-}
-
-@mixin flexColumn {
-   display: flex;
-   flex-direction: column;
-   justify-content: flex-start;
-   align-items: space-between;
-}
-
-@mixin flexCenter {
-   display: flex;
-   justify-content: center;
-   align-items: center;
-}
-
-@mixin flexWrap {
-   width: 100vw;
-   display: flex;
-   justify-content: flex-start;
-   align-items: stretch;
-   flex-wrap: wrap;
-}
+@import './mixins.scss';
 
 
 body{
    background:$background;
 }
-// main{
-//    @include flexCenter;
-// }
 
 .container{
    @include flexWrap;
@@ -58,7 +21,6 @@ body{
 @include flexStart;
   max-width: $width;
   min-width: $width;
-//   min-height: $height;
   margin: $card-margin;
   box-shadow: 5px 5px 5px rgba(0,0,0,0.3);
 
@@ -76,7 +38,6 @@ body{
   }
   .card-content{
    width: 100%;
-   // height: 100%;
    padding: 10px;
    @include flexColumn;
    .sub-content{

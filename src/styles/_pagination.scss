@@ -1,10 +1,4 @@
-$pagination-height: 10vh;
-
-@mixin flexCenter {
-   display: flex;
-   justify-content: center;
-   align-items: center;
-}
+@import './mixins.scss';
 
 .pagination{
    background: #ffffff;
