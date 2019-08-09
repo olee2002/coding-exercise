@@ -5,9 +5,16 @@ $card-margin: 10px;
 $breakpoint-mobile: 360px;
 $breakpoint-tablet: 768px;
 
-@mixin flexCenter {
+@mixin flexStart {
    display: flex;
    justify-content: flex-start;
+   align-items: center;
+   overflow: hidden;
+}
+
+@mixin flexCenter {
+   display: flex;
+   justify-content: center;
    align-items: center;
    overflow: hidden;
 }
@@ -35,13 +42,23 @@ body{
 }
 
 .card{
-@include flexCenter;
+@include flexStart;
   max-width: $width;
   min-width: $width;
   height: $height;
   margin: $card-margin;
   box-shadow: 5px 5px 5px rgba(0,0,0,0.3);
-  img{
-     
+  .place-holder{
+   width: 100%;
+   height: 50%;
+   background : url('http://res.cloudinary.com/bguggie/image/upload/v1425514882/darktiles_bg_gike55.jpg');
+   background-repeat: no-repeat;
+   background-size: $width;
+   @include flexCenter;
+   img{
+      width: 70%;
+      height: 70%;
+   }
   }
 }
+
