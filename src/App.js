@@ -7,7 +7,7 @@ import './styles/style.css';
 
 function App() {
   return (
-    <div className="App">
+    <div className="container">
       {data.map((info, i)=><Card key={i} data = {info}/>)}
     </div>
   );

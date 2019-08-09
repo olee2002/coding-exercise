@@ -1,9 +1,33 @@
 $background : #7ca7d9;
+$width: 200px;
+$height: 400px;
+$card-margin: 10px;
 
+@mixin flexCenter {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+@mixin flexWrap {
+   width: 100vw;
+   height: 100vh;
+   display: flex;
+   justify-content: flex-start;
+   align-items: flex-start;
+   flex-wrap: wrap;
+}
 body{
    background:$background;
 }
 
-.card{
+.container{
+   @include flexWrap;
+}
 
+.card{
+@include flexCenter;
+  width: $width;
+  height: $height;
+  margin: $card-margin;
 }
