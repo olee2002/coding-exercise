@@ -34,27 +34,11 @@ export default class Pagination extends Component {
 
    render() {
       const { limit, currentPage } = this.state
-      const { count, onChangePage, handleArrows, page } = this.props
+      const { count, onChangePage, page } = this.props
       const maxPage = Math.ceil(count / limit)
       const currentlyAtMax = maxPage === page
       return (
-         <div className='flex-column flex-end w100 mt10'>
-         <div className='flex-wrap flex-end w100 mb10'>
-            <span className='flex ml10' style={boxStyleOutline}>
-               <span
-                  className='fa fa-chevron-left'
-                  onClick={
-                     page === 1
-                        ? () => {}
-                        : async () => {
-                             await handleArrows('forward')
-                             await this.setState({
-                                currentPage: currentPage - 1,
-                             })
-                          }
-                  }
-               />
-            </span>
+         <div className='pagination'>
             {this.showBoxes(count, limit).map((item, i) => (
                <div
                   key={i}
@@ -67,43 +51,35 @@ export default class Pagination extends Component {
                   {item}
                </div>
             ))}
-            <span className='flex ml5' style={boxStyleOutline}>
-               <span
-                  className='fa fa-chevron-right'
-                  onClick={
-                     currentlyAtMax
-                        ? () => {}
-                        : async () => {
-                             await this.setState({
-                                currentPage: currentPage + 1,
-                             })
-                             await handleArrows('backward')
-                          }
-                  }
-               />
-            </span>
-         </div>
          </div>
       )
    }
 }
 
 const boxStyle = {
+   display:'flex',
+   justifyContent:'center',
+   alignItems:'center',
    marginTop: 10,
    backgroundColor: '#204497',
    color: '#fff',
    width: 35,
    height: 35,
    borderRadius: 3,
+   margin: 5,
    cursor: 'pointer',
 }
 const boxStyleOutline = {
+   display:'flex',
+   justifyContent:'center',
+   alignItems:'center',
    marginTop: 10,
    backgroundColor: '#fff',
    border: '1px solid #DBDBDB',
    color: '#C5C5C5',
    width: 35,
    height: 35,
+   margin: 5,
    borderRadius: 3,
    cursor: 'pointer',
 }

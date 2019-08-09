@@ -9,15 +9,32 @@ import './styles/style.css';
 
 class App extends Component{
    state = {
-      data : importedData
+      data : importedData,
+      page: 1,
+      limit: 5,
    }
    componentDidMount(){
-      this.setState({data: importedData})
+      const { page, limit} = this.state
+      this.setState({data: importedData.slice(0,limit)})
    }
 
 
-   componentDidUpdate(){
+   componentDidUpdate(prevProps, prevState) {
+      if (prevState.page !== this.state.page) {
+         this.paginatedData()
+      }
+   }
 
+    //pagination
+    getPaginationPage = (page, arrowPage) => {
+      this.setState({ page, arrowPage })
+   }
+
+   paginatedData = () => {
+      const { data, limit, page } = this.state
+      
+      
+      // this.setState({ paginatedData })
    }
  
    handleSort= key => {
@@ -30,15 +47,20 @@ class App extends Component{
        this.setState({data: sortedData})
    }
   render(){
-   const { data } = this.state
+   const { data, page, limit } = this.state
    return (
-      <>
+      < div className='main'>
     <Header handleSort={this.handleSort}/>
      <div className="container">
        {data && data.length>0 && data.map((info, i)=><Card key={i} data = {info}/>)}
      </div>
-     <Pagination/>
-     </>
+     <Pagination 
+     count={importedData.length}
+     page={page}
+     onChangePage={this.getPaginationPage}
+     limit={limit}
+     />
+     </div>
    );
   }
 }
