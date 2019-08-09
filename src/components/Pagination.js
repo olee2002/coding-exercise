@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 
 export default class Pagination extends Component {
    state = {
-      total: 23,
+      total: 12,
       selected: false,
       limit: 6,
       boxes: [],
@@ -15,6 +15,12 @@ export default class Pagination extends Component {
       const { limit } = this.props
       if (limit) {
          this.setState({ limit })
+      }
+   }
+
+   componentDidUpdate(prevProps, prevState) {
+      if (prevProps.paginate !== this.props.paginate) {
+      this.setState({currentPage: 0})
       }
    }
 
