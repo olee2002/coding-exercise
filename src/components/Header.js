@@ -16,6 +16,11 @@ export default function Header({handleSort}) {
             className='btn btn-primary m-1'
             onClick={()=>handleSort('Price')}
             >Price</button>
+            <div className='git'>
+               <a href='https://github.com/olee2002/coding-exercise' title="GitHub" target="_blank">
+                  <img src='images/github.png' className='icon' alt="" />
+               </a>
+            </div>
       </div>
    )
 }

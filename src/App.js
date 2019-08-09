@@ -14,10 +14,7 @@ class App extends Component{
       page: 1,
       limit: 5,
    }
-   // componentDidMount(){
-
-   // }
-
+ 
 
    componentDidUpdate(prevProps, prevState) {
       if (prevState.page !== this.state.page) {
