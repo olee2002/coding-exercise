@@ -15,12 +15,22 @@ class App extends Component{
       page: 1,
       limit: 5,
    }
- 
 
    componentDidUpdate(prevProps, prevState) {
       if (prevState.page !== this.state.page) {
          this.paginatedData()
       }
+   }
+
+    
+   handleSort= key => {
+      const { data } = this.state
+         const sortedData = importedData.sort((a, b)=>{
+            if(a[key] < b[key]) { return -1; }
+            if(a[key] > b[key]) { return 1; }
+            return 0;
+        })
+       this.setState({data: sortedData, paginate:false})
    }
 
     //pagination
@@ -32,20 +42,13 @@ class App extends Component{
       const { limit, page } = this.state
       this.setState({data: importedData.slice((page-1)*limit,limit*page)})
    }
- 
-   handleSort= key => {
-      const { data } = this.state
-         const sortedData = importedData.sort((a, b)=>{
-            if(a[key] < b[key]) { return -1; }
-            if(a[key] > b[key]) { return 1; }
-            return 0;
-        })
-       this.setState({data: sortedData, paginate:false})
-   }
 
    handlePaginate=()=>{
-      const { page, limit} = this.state
-      this.setState({data: importedData.slice(0,limit), paginate: !this.state.paginate})
+      const { limit } = this.state
+      this.setState({
+         data: importedData.slice(0,limit), 
+         paginate: !this.state.paginate
+      })
    }
 
   render(){
@@ -57,12 +60,12 @@ class App extends Component{
             {data && data.length>0 && data.map((info, i)=><Card key={i} data = {info}/>)}
          </div>
          <Pagination 
-         count={importedData.length}
-         page={page}
-         onChangePage={this.getPaginationPage}
-         paginate={paginate}
-         handlePaginate={this.handlePaginate}
-         limit={limit}
+            count={importedData.length}
+            page={page}
+            onChangePage={this.getPaginationPage}
+            paginate={paginate}
+            handlePaginate={this.handlePaginate}
+            limit={limit}
          />
      </>
    );

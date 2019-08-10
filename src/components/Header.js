@@ -7,16 +7,16 @@ export default function Header({handleSort}) {
                <h6>Sort By: </h6>
                <div>
                <button 
-               className='btn btn-primary m-1'
-               onClick={()=>handleSort('Heading')}
+                  className='btn btn-primary m-1'
+                  onClick={()=>handleSort('Heading')}
                >Heading</button>
                <button 
-               className='btn btn-primary m-1'
-               onClick={()=>handleSort('Subheading')}
+                  className='btn btn-primary m-1'
+                  onClick={()=>handleSort('Subheading')}
                >Sub Heading</button>
                <button 
-               className='btn btn-primary m-1'
-               onClick={()=>handleSort('Price')}
+                  className='btn btn-primary m-1'
+                  onClick={()=>handleSort('Price')}
                >Price</button>
                </div>
             </div>
