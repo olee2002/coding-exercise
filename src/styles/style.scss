@@ -28,8 +28,8 @@ body{
    width: 100%;
    height: $height/2;
    background : url(http://res.cloudinary.com/bguggie/image/upload/v1425514882/darktiles_bg_gike55.jpg);
-   background-repeat: no-repeat;
-   background-size: $width;
+   background-repeat: repeat;
+   background-size: $width/2;
    @include flexCenter;
    img{
       width: 70%;
