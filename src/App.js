@@ -21,7 +21,6 @@ class App extends Component{
          this.paginatedData()
       }
    }
-
     
    handleSort= key => {
          //sort the source data

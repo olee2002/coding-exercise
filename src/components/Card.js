@@ -4,19 +4,16 @@ import { upperCase } from '../utils'
 
 export default function Card({ data }) {
 
+   const bridgeImage = 'http://res.cloudinary.com/bguggie/image/upload/v1425514888/wide_ggbridge_bg_teneax.jpg'
+   const placeholder = 'http://res.cloudinary.com/bguggie/image/upload/v1425514736/place_holder_zuvywg.png'
+
    return (
       <div className='card'>
          {data && data.showBridge ? 
-         <img 
-         src='http://res.cloudinary.com/bguggie/image/upload/v1425514888/wide_ggbridge_bg_teneax.jpg'
-         alt='bridge image'
-         /> 
+         <img src={bridgeImage} alt='bridge image'/> 
          :  
          <div className='place-holder'>
-            <img 
-            src='http://res.cloudinary.com/bguggie/image/upload/v1425514736/place_holder_zuvywg.png'
-            alt='placeholder'
-            /> 
+            <img src={placeholder} alt='placeholder'/> 
          </div>} 
          <div className='card-content'>
             <div className='sub-content'>
