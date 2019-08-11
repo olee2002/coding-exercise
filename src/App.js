@@ -24,7 +24,7 @@ class App extends Component{
 
     
    handleSort= key => {
-      const { data } = this.state
+         //sort the source data
          const sortedData = importedData.sort((a, b)=>{
             if(a[key] < b[key]) { return -1; }
             if(a[key] > b[key]) { return 1; }
