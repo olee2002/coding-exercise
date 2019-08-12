@@ -21,6 +21,10 @@ class App extends Component{
          this.paginatedData()
       }
    }
+
+   handleDefaultData = () =>{
+      this.setState({data: importedData, paginate:false})
+   }
     
    handleSort= key => {
          //sort the source data
@@ -64,6 +68,7 @@ class App extends Component{
             onChangePage={this.getPaginationPage}
             paginate={paginate}
             handlePaginate={this.handlePaginate}
+            handleDefaultData={this.handleDefaultData}
             limit={limit}
          />
      </>

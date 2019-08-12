@@ -40,7 +40,7 @@ export default class Pagination extends Component {
 
    render() {
       const { limit, currentPage } = this.state
-      const { count, onChangePage, paginate, handlePaginate } = this.props
+      const { count, onChangePage, paginate, handlePaginate, handleDefaultData } = this.props
 
       return (
          <div className='pagination'>
@@ -49,6 +49,10 @@ export default class Pagination extends Component {
                   <img src='images/github.png' className='icon' alt="" />
                </a>
             </div>
+            <div className='git' onClick={handleDefaultData}>
+               <img src='images/home.png' className='icon' alt="" />
+            </div>
+
             {paginate ? this.showBoxes(count, limit).map((item, i) => (
                <div
                   key={i}
@@ -59,7 +63,10 @@ export default class Pagination extends Component {
                   style={i === currentPage ? boxStyle : boxStyleOutline}>
                   {item}
                </div>
-            )) : <button className='btn btn-primary' onClick={handlePaginate}>Paginate</button>}
+            )) 
+            : 
+            <button className='btn btn-primary' onClick={handlePaginate}>Paginate</button>
+            }
          </div>
       )
    }
