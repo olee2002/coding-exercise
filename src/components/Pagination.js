@@ -45,11 +45,11 @@ export default class Pagination extends Component {
       return (
          <div className='pagination'>
             <div className='git'>
-               <a href='https://github.com/olee2002/coding-exercise' title="GitHub" target="_blank">
+               <a href='https://github.com/olee2002/coding-exercise' title="hithub" target="_blank">
                   <img src='images/github.png' className='icon' alt="" />
                </a>
             </div>
-            <div className='git' onClick={handleDefaultData}>
+            <div className='git' onClick={handleDefaultData} title="home">
                <img src='images/home.png' className='icon' alt="" />
             </div>
 
