@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 
 import Card from './components/Card'
 import Header from './components/Header'
@@ -28,7 +28,7 @@ class App extends Component{
     
    handleSort= key => {
          //sort the source data
-         const sortedData = importedData.sort((a, b)=>{
+         const sortedData = [...importedData].sort((a, b)=>{
             if(a[key] < b[key]) { return -1; }
             if(a[key] > b[key]) { return 1; }
             return 0;
